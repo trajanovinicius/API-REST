@@ -14,3 +14,5 @@ router.post("/register", async (req, res) => {
     return res.status(400).send({ error: "registration failed" }); // sempre que ocorrer falha no registro.
   }
 });
+
+module.exports = (app) => app.use("/auth", router); // repassando auth para o app com prefixo auth.
