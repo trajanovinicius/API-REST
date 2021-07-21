@@ -7,6 +7,7 @@ module.exports = {
           "mongodb+srv://todo:vini02s@cluster0.hoske.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
           {
             useNewUrlParser: true,
+            useUnifiedTopology: true,
           }
         )
         .then(console.log("Database connected"));
