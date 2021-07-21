@@ -1,11 +1,17 @@
 const mongoose = require("mongoose");
-
-mongoose.Promise = global.Promise;
-
-mongoose.connect("mongodb:localhost/noderest", {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-  useCreateIndex: true,
-});
-
-module.exports = mongoose;
+module.exports = {
+  connect() {
+    try {
+      mongoose
+        .connect(
+          "mongodb+srv://todo:vini02s@cluster0.hoske.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
+          {
+            useNewUrlParser: true,
+          }
+        )
+        .then(console.log("Database connected"));
+    } catch (error) {
+      console.log(error);
+    }
+  },
+};

@@ -1,11 +1,12 @@
-const express = require("express"); // definindo libs
-const bodyParser = require("body-parser");
+const express = require("express");
+const database = require("../src/database/index");
 
-const app = express(); // criando aplicação
+const app = express();
 
-app.use(bodyParser.json()); // indicando o que vai usar e as funções
-app.use(bodyParser.urlencoded({ extended: false }));
+database.connect();
 
-require("./controllers/authController")(app);
+const PORT = 3333;
 
-app.listen(3000); // qual porta quero ouvir
+app.use(express.json());
+
+app.listen(PORT, console.log(`Server Started on port ${PORT}`));
