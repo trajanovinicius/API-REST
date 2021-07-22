@@ -3,11 +3,11 @@ const mongoose = require("mongoose");
 const Todo = mongoose.model("Todo");
 
 module.exports = {
-  async index() {
-    const data = await Todo.all();
+  async index(req, res) {
+    const data = await Todo.find();
 
     return res.json({
-      todos: data,
+      Todo: data,
     });
   },
 
