@@ -1,18 +1,9 @@
 const mongoose = require("mongoose");
 
 const todoSchema = new mongoose.Schema({
-  tarefa: {
-    type: "String",
-    require: true,
-  },
-  dataInicio: {
-    type: "String",
-    require: true,
-  },
-  finalizado: {
-    type: "Boolean",
-    require: true,
-  },
+  tarefa: String, // String is shorthand for {type: String}
+  dataInicio: String,
+  finalizado: Boolean,
 });
 
 const Todo = mongoose.model("Todo", todoSchema);
